@@ -1,0 +1,12 @@
+!!!
+%html
+  %head
+    %title== Articles: #{ controller.action_name }
+    = stylesheet_link_tag 'compiled/screen.css', :media => 'screen, projection'
+    = csrf_meta_tag
+
+  %body.bp
+    -if notice.present?
+      %p.notice= notice
+
+    = yield

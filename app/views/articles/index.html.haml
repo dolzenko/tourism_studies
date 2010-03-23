@@ -1,0 +1,10 @@
+- for article in @articles
+  %div= link_to article.title, article 
+  - if Rails.env.development?
+    = link_to 'Edit', edit_article_path(article)
+    = link_to 'Destroy', article, :confirm => 'Are you sure?', :method => :delete
+  %br
+  %br
+
+- if Rails.env.development?
+  = link_to 'New article', new_article_path

@@ -1,0 +1,16 @@
+development:
+  adapter: mysql
+  database: <%= ENV["DB"] || "tourism_studies" %>
+  host: 192.168.204.1
+  port: 3306
+  username: root
+  password: "root-password"
+  encoding: utf8
+production:
+  adapter: mysql
+  database: <%= ENV["DB"] || "tourism_studies" %>
+  host: 192.168.204.1
+  port: 3306
+  username: root
+  password: "root-password"
+  encoding: utf8

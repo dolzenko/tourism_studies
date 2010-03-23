@@ -1,0 +1,74 @@
+@media -sass-debug-info{filename{font-family:file\:\/\/\/mnt\/hgfs\/tourism_studies\/app\/stylesheets\/print\.sass}line{font-family:\0037 }}
+body.bp {
+  line-height: 1.5;
+  font-family: Helvetica Neue, Arial, Helvetica, sans-serif;
+  color: #000;
+  background: none;
+  font-size: 10pt;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/rvm\/gems\/ruby-1\.9\.2-head\/gems\/compass-0\.10\.0\.rc1\/frameworks\/blueprint\/stylesheets\/blueprint\/_print\.sass}line{font-family:\0034 6}}
+body.bp .container {
+  background: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/rvm\/gems\/ruby-1\.9\.2-head\/gems\/compass-0\.10\.0\.rc1\/frameworks\/blueprint\/stylesheets\/blueprint\/_print\.sass}line{font-family:\0034 8}}
+body.bp hr {
+  background: #ccc;
+  color: #ccc;
+  width: 100%;
+  height: 2px;
+  margin: 2em 0;
+  padding: 0;
+  border: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/rvm\/gems\/ruby-1\.9\.2-head\/gems\/compass-0\.10\.0\.rc1\/frameworks\/blueprint\/stylesheets\/blueprint\/_print\.sass}line{font-family:\0035 6}}
+body.bp hr.space {
+  background: #fff;
+  color: #fff;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/rvm\/gems\/ruby-1\.9\.2-head\/gems\/compass-0\.10\.0\.rc1\/frameworks\/blueprint\/stylesheets\/blueprint\/_print\.sass}line{font-family:\0035 9}}
+body.bp h1, body.bp h2, body.bp h3, body.bp h4, body.bp h5, body.bp h6 {
+  font-family: Helvetica Neue, Arial, Helvetica, sans-serif;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/rvm\/gems\/ruby-1\.9\.2-head\/gems\/compass-0\.10\.0\.rc1\/frameworks\/blueprint\/stylesheets\/blueprint\/_print\.sass}line{font-family:\0036 1}}
+body.bp code {
+  font-size: .9em;
+  font-family: 'andale mono', 'lucida console', monospace;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/rvm\/gems\/ruby-1\.9\.2-head\/gems\/compass-0\.10\.0\.rc1\/frameworks\/blueprint\/stylesheets\/blueprint\/_print\.sass}line{font-family:\0036 6}}
+body.bp a img {
+  border: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/rvm\/gems\/ruby-1\.9\.2-head\/gems\/compass-0\.10\.0\.rc1\/frameworks\/blueprint\/stylesheets\/blueprint\/_print\.sass}line{font-family:\0036 8}}
+body.bp a:link,
+body.bp a:visited {
+  background: transparent;
+  font-weight: 700;
+  text-decoration: underline;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/rvm\/gems\/ruby-1\.9\.2-head\/gems\/compass-0\.10\.0\.rc1\/frameworks\/blueprint\/stylesheets\/blueprint\/_print\.sass}line{font-family:\0037 3}}
+body.bp p img.top {
+  margin-top: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/rvm\/gems\/ruby-1\.9\.2-head\/gems\/compass-0\.10\.0\.rc1\/frameworks\/blueprint\/stylesheets\/blueprint\/_print\.sass}line{font-family:\0037 5}}
+body.bp blockquote {
+  margin: 1.5em;
+  padding: 1em;
+  font-style: italic;
+  font-size: .9em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/rvm\/gems\/ruby-1\.9\.2-head\/gems\/compass-0\.10\.0\.rc1\/frameworks\/blueprint\/stylesheets\/blueprint\/_print\.sass}line{font-family:\0038 0}}
+body.bp .small {
+  font-size: .9em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/rvm\/gems\/ruby-1\.9\.2-head\/gems\/compass-0\.10\.0\.rc1\/frameworks\/blueprint\/stylesheets\/blueprint\/_print\.sass}line{font-family:\0038 2}}
+body.bp .large {
+  font-size: 1.1em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/rvm\/gems\/ruby-1\.9\.2-head\/gems\/compass-0\.10\.0\.rc1\/frameworks\/blueprint\/stylesheets\/blueprint\/_print\.sass}line{font-family:\0038 4}}
+body.bp .quiet {
+  color: #999;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/local\/rvm\/gems\/ruby-1\.9\.2-head\/gems\/compass-0\.10\.0\.rc1\/frameworks\/blueprint\/stylesheets\/blueprint\/_print\.sass}line{font-family:\0038 6}}
+body.bp .hide {
+  display: none;
+}
