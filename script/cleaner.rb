@@ -14,6 +14,8 @@ result = input.gsub(/<([\/]{0,1})(\w+).*?>/m) do |tag_match|
   # p change to div
   if $2 == "p"
     "<#{ $1 }div>"
+  elsif %w(table td tr).include?($2)
+    "<#{ $1 }#{ $2 }>"
   else
     ""
   end

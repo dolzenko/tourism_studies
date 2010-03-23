@@ -280,7 +280,7 @@ body.three-col #content {
 
 /* line 48, ../../../app/stylesheets/screen.sass */
 .article {
-  font-style: Times New Roman;
+  font-family: Times New Roman;
   font-size: 14pt;
 }
 /* line 52, ../../../app/stylesheets/screen.sass */
@@ -354,4 +354,9 @@ body.three-col #content {
 .article .table table tbody tr:last-child th, .article .table table tbody tr:last-child td, .article .table table tfoot tr:last-child th, .article .table table tfoot tr:last-child td,
 .article .table table tbody tr.last th, .article .table table tbody tr.last td, .article .table table tfoot tr.last th, .article .table table tfoot tr.last td {
   border-bottom-width: 0px;
+}
+/* line 88, ../../../app/stylesheets/screen.sass */
+.article .attention {
+  font-weight: bold;
+  font-style: italic;
 }
