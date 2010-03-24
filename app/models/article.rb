@@ -7,6 +7,8 @@ class Article < ActiveRecord::Base
   before_save :sync_filesystem_attrs
   after_create :init_filesystem_attrs
   validate :title => :presence
+
+  acts_as_tree :order => :position
   
   def content
     if file = filesystem_attr_file

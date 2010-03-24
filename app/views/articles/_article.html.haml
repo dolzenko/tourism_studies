@@ -1,0 +1,7 @@
+.item.section
+  = link_to article.title, article
+  - if Rails.env.development?
+    .controls
+      = link_to 'Edit', edit_article_path(article)
+      = link_to 'Destroy', article, :confirm => 'Are you sure?', :method => :delete
+    .item.module= render article.children
