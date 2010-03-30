@@ -1,64 +1,208 @@
 // This import applies a global reset to any page that imports this stylesheet.
 @import blueprint/reset.sass
+
 // To configure blueprint, edit the partials/base.sass file.
 @import partials/base.sass
+
 // Import all the default blueprint modules so that we can access their mixins.
 @import blueprint
+
 // Import the non-default scaffolding module.
 @import blueprint/scaffolding.sass
 
-// To generate css equivalent to the blueprint css but with your configuration applied, uncomment:
-// +blueprint
+@import compass/utilities.sass
 
-//Recommended Blueprint configuration with scoping and semantic layout:
+@import partials/even_more_rounded_corners
+@import partials/ver_zebra
+
 +blueprint-scaffolding("body.bp")
 body.bp
+  !viewport_width = 1200px - 20px
+  !sidebar_width = 340px
+  !sidebar_padding = 15px
+  !sidebar_margin = 10px
+  !sidebar_container_gap = 10px  
+
+  margin: 0 0
+
   // +blueprint-typography(true)
   +blueprint-utilities
   +blueprint-debug
   +blueprint-interaction
+  +blueprint-form
   // Remove the scaffolding when you're ready to start doing visual design.
   // Or leave it in if you're happy with how blueprint looks out-of-the-box
-  background-color: rgb(212,208,200)
-  width: 620px
-  margin-left: 300px
+  background-color: #e6e6e6
   text-align: justify
-form.bp
-  +blueprint-form
 
-// Page layout can be done using mixins applied to your semantic classes and IDs:
-body.three-col
-  #container
-    +container
-  #header, #footer
-    +column(!blueprint_grid_columns)
+  .wrapper
+    margin: 0 auto
+    width= !viewport_width
+
   #sidebar
-    // One third of the grid columns, rounding down. With 24 cols, this is 8.
-    !sidebar_columns = floor(!blueprint_grid_columns / 3)
-    +column(!sidebar_columns)
-  #content
-    // Two thirds of the grid columns, rounding up.
-    // With 24 cols, this is 16.
-    !content_columns = ceil(2 * !blueprint_grid_columns / 3)
-    // true means it's the last column in the row
-    +column(!content_columns, true)
+    !sidebar_text_color = #4f4f4f
+
+    float: left
+    width= !sidebar_width
+    margin:
+      left= !sidebar_margin
+      right= !sidebar_container_gap
+    border: 1px solid #d8d8d8
+    padding:
+      left= !sidebar_padding
+      right= !sidebar_padding
+      top: 30px
+      bottom: 15px
+    background:
+      color: #e5e5e5
+      image= image_url("sidebar.png")
+      repeat: repeat-x
+    color: #4f4f4f
+    font:
+      family: Tahoma
+      size: 14px
+
+    text-align: left
+
+    a
+      +all-link-colors(!sidebar_text_color)
+      text-decoration: none
+      &:active, &:focus
+        outline: none
+      &:hover
+        background:
+          color: #d8d8d8
+
+      &.current
+        font:
+          weight: bold
+
+    .module
+      margin:
+        left: 1em
+        top: 4px
+
+    .section
+      margin:
+        top: 10px
+
+  #container
+    !container_padding = 20px
+    !container_margin = 10px
+    float: left
+    position: relative
+    width= !viewport_width - !sidebar_margin - !sidebar_padding * 2 - !sidebar_width - !sidebar_container_gap - !container_padding * 2 - !container_margin - 4px 
+    margin:
+      top: 0
+      bottom: 10px
+      right= !container_margin
+    padding:
+      top: 35px
+      bottom: 45px
+      left= !container_padding 
+      right= !container_padding
+    border: 1px solid #d8d8d8
+    background:
+      color: white
 
 
-@import compass/utilities.sass
+    h1
+      text-align: left
+      color: #184c82
+      font:
+        family: Tahoma
+        weight: normal
+        size: 24pt
+        
+.header
+  !height = 46px
+  !font_size = 18px
+
+  width: 100%
+  height= !height
+  max-height= !height
+  background:
+    color: #162d46
+    image= image_url("headergrad.png")
+    repeat: repeat-x
+  padding:
+    top= ((!height - !font_size) / 2) - !font_size / 2
+    
+  h1
+    color: white
+    font:
+      size= !font_size
+      weight: normal
+      family: Tahoma
+    text-align: center
+
+.nav
+  !navrounded_image_url = image_url("navrounded.png")
+  !navrounded_image_width = image_width("navrounded.png")
+  !navrounded_bottom_image_url = image_url("navroundedbottom.png")
+
+  position: absolute
+  top: 0
+  right: 0
+  font:
+    family: Tahoma
+    weight: bold
+  padding= 5px !navrounded_image_width
+  background:
+    color: #d0d0d0
+    image= !navrounded_image_url
+    position: left bottom
+    repeat: no-repeat
+
+  &.nbottom
+    top: auto
+    bottom: 0
+
+    background:
+      position: left top
+      image= !navrounded_bottom_image_url
+
+  a
+    color: #1e3d5e
+    text-decoration: none
+  .delim
+    !delim_margin = 24px
+    margin:
+      left= !delim_margin
+      right= !delim_margin
+  .prev
+    +nav-link-icon("navleftarr.png", "left")
+  .next
+    +nav-link-icon("navrightarr.png", "right")
+
 .module
   margin:
     left: 2em
     
 .article
   font:
-    family: Times New Roman
+    family: "Palatino Linotype","Book Antiqua",Palatino,FreeSerif,serif
     size: 14pt
+
   div
     margin:
       top: 10px
     &:first-letter
       margin-left: 2em
-    line-height: 150%  
+    line-height: 150%
+
+  > img, .illustration
+    display: block
+    margin: 10px auto
+    border-style: none
+
+  h6
+    font-size: 16px
+    margin:
+      bottom: 15px
+    font:
+      family: Tahoma
+    text-align: left
 
   .quote
     &:first-letter
@@ -69,11 +213,31 @@ body.three-col
     margin-left: 4em
 
   #tourism-in-different-languages
-    background-color: gray
+    table
+      +ver-zebra
+    margin:
+      bottom: 30px
 
   .questions
     font:
       style: italic
+
+    border-top-style: dotted
+    border-right-style: none
+    border-bottom-style: dotted
+    border-left-style: none
+    border-width: 1px
+    border-color: black
+
+    padding:
+      top: 20px
+      bottom: 30px
+
+    background:
+      image= image_url("key.png")
+      repeat: no-repeat
+      position: 0px 28px
+
 
   #aleksandrova-class
     > li
@@ -94,7 +258,70 @@ body.three-col
       weight: bold
       style: italic
 
+  .additional
+    margin-left: 30px
+    width: 250px
+    float: right
+
+    .rounded
+      +even-more-rounded-corners("/images/even-more-rounded-corners.png", 20px)
+      margin:
+        top: 0
+      div
+        margin-top: 0
+        &:first-letter
+          margin-left: 0
+      text-align: left
+
+      .label
+        font:
+          style: italic
+          weight: bold
+        margin-top: 20px
+        padding:
+          top: 15px
+          bottom: 15px
+          left= image_width("question.png") + 10px
+        background:
+          image= image_url("question.png")
+          position: left center
+          repeat: no-repeat
+
+      a
+        +all-link-colors(#479cc5)
+        font:
+          style: italic
+          weight: bold
+
+  .fancybox
+    .note
+      margin-top: -10px
+      color: black
+      text-align: center
+      font:
+        family: Tahoma
+        size: 14px
+
 
 .articles.index
   .controls
     display: none
+
+.dialog
+  +even-more-rounded-corners("/images/even-more-rounded-corners.png", 20px)
+  width: 300px
+
+.tooltip
+  display: none
+  background-color: #ffa
+  border: 1px solid #cc9
+  padding: 3px
+  font-size: 13px
+  -moz-box-shadow: 2px 2px 11px #666
+  -webkit-box-shadow: 2px 2px 11px #666
+
+#slideshow
+  width: 720px
+  div
+    line-height: 100%
+    margin-top: 0

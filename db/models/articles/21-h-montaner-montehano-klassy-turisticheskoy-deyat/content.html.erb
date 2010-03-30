@@ -1,3 +1,12 @@
+<ul id="slideshow">
+  <% for image in Dir[Rails.root + "public/images/spain/*.*"] %>
+    <li>
+      <%= image_tag image.sub(/^#{ Regexp.escape (Rails.root + "public").to_s }/, "") %>
+    </li>
+  <% end %>
+</ul>
+
+
 <div> В конце первого десятилетия XXI в.
   Испанию
 </div>

@@ -1,0 +1,13 @@
+<div class="additional">
+  <div class="rounded">
+    <% content = capture do %>
+      <div class="label">
+        Дополнительный материал:
+      </div>
+
+      <%= link_to title, path %>
+    <% end %>
+    <%# TODO render with partial layout didn't work %>
+    <%= render "even_more_rounded_corners", :content => content %>
+  </div>
+</div>

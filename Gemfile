@@ -6,6 +6,7 @@ gem 'mysql'
 gem 'haml-edge'
 gem 'mongrel'
 gem "compass", "0.10.0.rc1"
+gem "rmagick"
 
 group :development do
   gem "ruby-debug19"

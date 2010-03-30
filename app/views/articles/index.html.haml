@@ -1,4 +1,9 @@
-!= render @articles
+%table
+  %tr
+    %td
+      != render @articles
+    %td
+      != Article.flatten.map(&:id).join("<br/>")
 
-- if Rails.env.development?
+- if Rails.env.development? && params[:action] == "index"
   = link_to 'New article', new_article_path

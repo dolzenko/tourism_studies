@@ -1,4 +1,10 @@
-= link_to 'Оглавление', articles_path
+- content_for :navigation do
+  - if @article.additional_material?
+    = link_to_function "вернуться к основному материалу", "javascript:history.back()", :class => :prev
+  - else
+    != [ (link_to("предыдущий модуль", @article.previous, :class => :prev) if @article.previous), |
+         (link_to("следующий модуль", @article.next, :class => :next) if @article.next) ].compact.join(image_tag("navdelim.png", :class => :delim)) |
+  / = link_to 'оглавление', articles_path
 
 %h1!= @article.title
 

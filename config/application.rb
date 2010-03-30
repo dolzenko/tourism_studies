@@ -46,5 +46,7 @@ module TourismStudies
     # for gem beta rails
     # config.action_controller.session = { :key => "_myapp_session", :secret => "13227203cc8d5d3fac2432593c1820a1" }
     # config.action_dispatch.session_store = :cookie_store, { :key => "_myapp_session" }
+
+    # config.action_controller.view_paths = %W( #{config.root}/app/stylesheets/partials )
   end
 end

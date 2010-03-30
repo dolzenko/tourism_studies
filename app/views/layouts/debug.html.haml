@@ -1,0 +1,10 @@
+!!!
+%html{:xmlns => "http://www.w3.org/1999/xhtml", "xml:lang" => "ru", :lang => "ru"}
+  %head
+    %meta{'http-equiv' => 'Content-Type', :content => 'text/html; charset=UTF-8'}
+    %title== Articles: #{ controller.action_name }
+    = javascript_include_tag "http://cdn.jquerytools.org/1.1.2/full/jquery.tools.min.js"
+    = csrf_meta_tag
+
+  %body
+    = yield

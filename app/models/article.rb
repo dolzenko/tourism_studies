@@ -8,7 +8,45 @@ class Article < ActiveRecord::Base
   after_create :init_filesystem_attrs
   validate :title => :presence
 
-  acts_as_tree :order => :position
+  acts_as_tree :order => "position, id"
+
+  def section?
+    parent_id.blank?
+  end
+  
+  def self.children
+    roots
+  end
+
+  def self.flatten
+    # let's do that preorder traversal in non-recursive way 
+    res = []
+    stack = [Article]
+    while ent = stack.pop
+      res << ent
+      stack.concat ent.children.reverse
+    end
+    res.shift
+    res
+  end
+
+  def previous
+    flat = self.class.flatten
+    if (index = flat.index(self)) > 0
+      flat[index - 1]
+    end
+  end
+
+  def next
+    flat = self.class.flatten
+    if (index = flat.index(self)) < flat.size - 1
+      flat[index + 1]
+    end
+  end
+
+  def additional_material?
+    parent_id == 52
+  end
   
   def content
     if file = filesystem_attr_file

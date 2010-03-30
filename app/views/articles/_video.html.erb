@@ -1,0 +1,5 @@
+<a href="<%= send(:compute_public_path, video, "videos") %>" style="display:block;width:520px;height:400px;margin: 0 auto;" id="player"> </a>
+
+<script>
+  flowplayer("player", "<%= send(:compute_public_path, "flowplayer-3.1.5.swf", "javascripts") %>", { clip: { scaling: 'fit', autoPlay: false, autoBuffering: true } });
+</script>

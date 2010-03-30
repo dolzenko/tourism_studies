@@ -1,11 +1,14 @@
-// Here is where you can define your constants for your application and to configure the blueprint framework.
-// Feel free to delete these if you want keep the defaults:
+!blueprint_grid_columns = 29
 
-!blueprint_grid_columns = 24
-!blueprint_container_size = 950px
-!blueprint_grid_margin  = 10px
+=all-link-colors(!color)
+  +link-colors(!color, !color, !color, !color, !color)
 
-// Use this to calculate the width based on the total width.
-// Or you can set !blueprint_grid_width to a fixed value and unset !blueprint_container_size -- it will be calculated for you.
-!blueprint_grid_width   = (!blueprint_container_size + !blueprint_grid_margin) / !blueprint_grid_columns - !blueprint_grid_margin
-
+=nav-link-icon(!name, !position)
+  background:
+    repeat: no-repeat
+    position= !position "center"
+    image= image_url(!name)
+  padding:
+    #{!position}= image_width(!name) + 4px
+    // TODO this better centers image, why?
+    bottom: 2px
