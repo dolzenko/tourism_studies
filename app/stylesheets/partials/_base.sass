@@ -1,14 +1,14 @@
-!blueprint_grid_columns = 29
+$blueprint_grid_columns: 29
 
-=all-link-colors(!color)
-  +link-colors(!color, !color, !color, !color, !color)
+=all-link-colors($color)
+  +link-colors($color, $color, $color, $color, $color)
 
-=nav-link-icon(!name, !position)
+=nav-link-icon($name, $position)
   background:
     repeat: no-repeat
-    position= !position "center"
-    image= image_url(!name)
+    position: $position center
+    image: image_url($name)
   padding:
-    #{!position}= image_width(!name) + 4px
+    #{$position}: image_width($name) + 4px
     // TODO this better centers image, why?
     bottom: 2px

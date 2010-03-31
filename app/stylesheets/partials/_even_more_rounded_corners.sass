@@ -1,66 +1,55 @@
-=even-more-rounded-corners(!image, !corner_width)
+=even-more-rounded-corners($image, $corner_width)
   position: relative
   margin: 0px auto
   min-width: 8em
   max-width: 760px
   z-index: 1
-  margin-left= !corner_width
+  margin-left: $corner_width
   margin-bottom: 0.5em
-
   .content, .t
-    background= "transparent #{image_url(!image)} no-repeat top right"
-    _background-image= url(dialog2-blue.gif)
-
-  .b
-    background= "transparent #{image_url(!image)} no-repeat top right"
+    background: transparent image_url($image) no-repeat top right
     _background-image: url(dialog2-blue.gif)
-
+  .b
+    background: transparent image_url($image) no-repeat top right
+    _background-image: url(dialog2-blue.gif)
     div
-      background= "transparent #{image_url(!image)} no-repeat top right"
+      background: transparent image_url($image) no-repeat top right
       _background-image: url(dialog2-blue.gif)
-
   .content
     position: relative
     zoom: 1
     _overflow-y: hidden
-    padding= 0px !corner_width 0px 0px
-
+    padding: 0px $corner_width 0px 0px
   .t
     position: absolute
     left: 0px
     top: 0px
-    width= !corner_width
-    margin-left= -1 * !corner_width
+    width: $corner_width
+    margin-left: -1 * $corner_width
     height: 100%
     _height: 1600px
     background-position: top left
-
   .b
     position: relative
     width: 100%
     height: 30px
     font-size: 1px
     background-position: bottom right
-
     div
       height: 30px
       font-size: 1px
       position: relative
-      width= !corner_width
-      margin-left= -1 * !corner_width
+      width: $corner_width
+      margin-left: -1 * $corner_width
       background-position: bottom left
-
   .hd, .bd, .ft
     position: relative
-
   .wrapper
     position: static
     max-height: 1000px
     overflow: auto
-
   h1, p
     margin: 0px
     padding: 0.5em 0px 0.5em 0px
-
   h1
     padding-bottom: 0px
