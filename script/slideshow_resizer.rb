@@ -1,5 +1,8 @@
+SLIDESHOW_RMAGICK_GEOMETRY = "693>"
+
 require "RMagick"
 require "pathname"
+require "fileutils"
 
 def resize_image(source, target, size)
   puts "#{ source } => #{ target}"
@@ -22,6 +25,8 @@ end
 
 root = Pathname.new(File.expand_path("../", File.dirname(__FILE__)))
 
-for source in Dir[(root + "misc/spain_source/*.*").to_s]
-  resize_image(source, root + "public/images/spain" + File.basename(source), "693>")
+for source in Dir[(root + "db/models/articles/**/slideshow/source/*.*").to_s]
+  target =  source.sub("slideshow/source", "slideshow/resized")
+  FileUtils.mkdir_p(File.dirname(target))
+  resize_image(source,target , SLIDESHOW_RMAGICK_GEOMETRY)
 end

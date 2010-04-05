@@ -230,7 +230,7 @@ body.bp
     width: 250px
     float: right
     .rounded
-      +even-more-rounded-corners("/images/even-more-rounded-corners.png", 20px)
+      +even-more-rounded-corners("even-more-rounded-corners.png", 20px)
       margin:
         top: 0
       div
@@ -269,10 +269,6 @@ body.bp
   .controls
     display: none
 
-.dialog
-  +even-more-rounded-corners("/images/even-more-rounded-corners.png", 20px)
-  width: 300px
-
 .tooltip
   display: none
   background-color: #ffffaa
@@ -287,3 +283,10 @@ body.bp
   div
     line-height: 100%
     margin-top: 0
+
+.inlinenav
+  font:
+    family: "Palatino Linotype", "Book Antiqua", Palatino, FreeSerif, serif
+    size: 14pt
+  line-height: 200%
+  text-align: left  

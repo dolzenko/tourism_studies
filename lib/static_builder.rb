@@ -32,8 +32,8 @@ class StaticBuilder
   end
 
   def purge_build_dir
-    puts "Purging #{ build_dir }"
-    FileUtils.rm_rf(Dir[build_dir])
+    puts "Purging everything beneath #{ build_dir }"
+    FileUtils.rm_rf(Dir[build_dir + "*"]) #  don't touch the build/ dir itself
   end
 
   def get(path)

@@ -1,5 +1,5 @@
 class DebugController < ApplicationController
   def test
-    render :layout => "articles"
+    r Rails.public_path
   end
 end

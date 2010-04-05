@@ -1,0 +1,19 @@
+=nav-link-icon($name, $position)
+  background:
+    position: $position center
+
+.mixin
+  +nav-link-icon("navleftarr.png", "left")
+
+$pos: "left"
+.direct
+  background:
+    position: $pos center
+
+
+$image: "test.png"
+.unquotes
+  background: unquote("transparent ") + image_url($image) + unquote(" no-repeat top right")
+
+.nounquotes
+  background: transparent image_url($image) no-repeat top right

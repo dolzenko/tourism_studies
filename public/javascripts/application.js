@@ -21,8 +21,8 @@ $(function() {
     img.attr("title", "Кликните по изображению чтобы увеличить");
     
     img.tooltip({
-        tip: '.tooltip',
-        effect: 'fade',
+        tip: ".tooltip",
+        effect: "fade",
         fadeOutSpeed: 100,
         predelay: 400,
         position: "top center",
@@ -31,8 +31,15 @@ $(function() {
     });
   });
 
+  //,
+  //    on_rewind: function() {
+  //      location.href = $("a.next:first").attr("href"); // go to next slideshow
+  //      return false; // cancel transition to the first frame
+  //    }
+  
   $("#slideshow").galleryView({
     panel_width: 720,					//INT - width of gallery panel (in pixels)
-    panel_height: 520					//INT - height of gallery panel (in pixels)
+    panel_height: 520,					//INT - height of gallery panel (in pixels)
+    frame_gap: 0
   });
 });

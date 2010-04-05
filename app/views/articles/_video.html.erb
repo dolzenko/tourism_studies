@@ -1,5 +1,55 @@
-<a href="<%= send(:compute_public_path, video, "videos") %>" style="display:block;width:520px;height:400px;margin: 0 auto;" id="player"> </a>
+<!--<a href="<%= %>"-->
+<!--style="display: block; width: 640px; height: 500px; margin: 0 auto;" id="player"> </a>-->
+
+<!--<script>-->
+<!--flowplayer("player",-->
+<!--"<%= send(:compute_public_path, "flowplayer-3.1.5.swf", "javascripts") %>",-->
+<!--{ clip: { scaling: 'fit', autoPlay: false, autoBuffering: true } });-->
+<!--</script>-->
+
+
+<% flashvars = { :file => send(:compute_public_path, video, "videos"), :autostart => :true }.to_query %>
+
+<object id="player" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" name="player" width="736" height="552">
+  <param name="movie" value="<%= send(:compute_public_path, "player.swf", "javascripts") %>"/>
+  <param name="allowfullscreen" value="true"/>
+  <param name="allowscriptaccess" value="always"/>
+  <param name="flashvars" value="<%= flashvars %>"/>
+  <embed type="application/x-shockwave-flash"
+         id="player2"
+         name="player2"
+         src="<%= send(:compute_public_path, "player.swf", "javascripts") %>"
+         width="736"
+         height="552"
+         allowscriptaccess="always"
+         allowfullscreen="true"
+         flashvars="<%= flashvars %>"/>
+</object>
 
 <script>
-  flowplayer("player", "<%= send(:compute_public_path, "flowplayer-3.1.5.swf", "javascripts") %>", { clip: { scaling: 'fit', autoPlay: false, autoBuffering: true } });
+  var player = null;
+  function playerReady(thePlayer) {
+    player = document.getElementById(thePlayer.id);
+    addListeners();
+  }
+
+
+  function addListeners() {
+    if (player) {
+      player.addModelListener("STATE", "stateListener");
+    } else {
+      setTimeout("addListeners()", 100);
+    }
+  }
+
+  function stateListener(obj) {
+    console.log(obj.oldstate);
+    console.log(obj.newstate);
+    currentState = obj.newstate;
+    previousState = obj.oldstate;
+
+    if (currentState == "COMPLETED") {
+      document.location.href = "54-moskva.html";
+    }
+  }
 </script>

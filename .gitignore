@@ -7,3 +7,7 @@ build/
 .idea/
 public/videos/
 public/images/spain/
+db/models/articles/**/slideshow/source/*.*
+db/models/articles/**/slideshow/resized/*.*
+*.flv
+app/stylesheets/.sass-cache/

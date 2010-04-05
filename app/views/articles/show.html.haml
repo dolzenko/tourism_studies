@@ -16,3 +16,8 @@
   = link_to 'Back', articles_path
 
 .article[]!= render(:inline => @article.content.html_safe)
+
+- if @article.children.present?
+  %hr
+  .inlinenav
+    = render @article.children

@@ -25,6 +25,7 @@ var window_loaded = false;
 		var id;
 		var iterator = 0;		// INT - Currently visible panel/frame
 		var item_count = 0;		// INT - Total number of panels/frames
+		var show_next_item_calls_count = 0;		
 		var slide_method;		// STRING - indicator to slide entire filmstrip or just the pointer ('strip','pointer')
 		var theme_path;			// STRING - relative path to theme directory
 		var paused = false;		// BOOLEAN - flag to indicate whether automated transitions are active
@@ -282,10 +283,20 @@ var window_loaded = false;
 	**		Transition from current frame to next frame
 	*/
 		function showNextItem() {
-			
+      if (opts.on_rewind) {
+        show_next_item_calls_count += 1;
+        if (show_next_item_calls_count > item_count) {
+          if (!opts.on_rewind.call()) {
+            return;
+          }
+        }
+      }
+
 			// Cancel any transition timers until we have completed this function
 			$(document).stopTime("transition");
-			if(++iterator==j_frames.length) {iterator=0;}
+			if(++iterator==j_frames.length) {
+        iterator=0;
+      }
 			// We've already written the code to transition to an arbitrary panel/frame, so use it
 			showItem(iterator);
 			// If automated transitions haven't been cancelled by an option or paused on hover, re-enable them
@@ -1033,6 +1044,8 @@ var window_loaded = false;
 		
 		show_captions: false,				//BOOLEAN - flag to show or hide frame captions
 		fade_panels: true,					//BOOLEAN - flag to fade panels during transitions or swap instantly
-		pause_on_hover: false				//BOOLEAN - flag to pause slideshow when user hovers over the gallery
+		pause_on_hover: false,				//BOOLEAN - flag to pause slideshow when user hovers over the gallery
+
+    on_rewind: null
 	};
 })(jQuery);
