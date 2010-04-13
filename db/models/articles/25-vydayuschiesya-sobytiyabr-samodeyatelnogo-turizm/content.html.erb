@@ -1,12 +1,9 @@
-<%= article_image_tag "banner.jpg" %>
+<% @h1_class = :under_big_banner %>
+<%= article_image_tag("banner.jpg", :id => :banner) %>
 
-<h3>
-  Выдающиеся события самодеятельного туризма 30-х годов
-</h3>
-
-<h4>
+<h3 style="font-style: italic; text-align: center;">
   Путешествие Глеба Травина: один против всех стихий
-</h4>
+</h3>
 
 <%= article_image_tag "image006.jpg", :class => :illustration, :alt => "Глеб Травин" %>
 
@@ -186,7 +183,9 @@
 Харитановский написал о Травине книгу «Человек с железным оленем», в которой
 рассказывается о его беспримерном туристском подвиге.</div>
 
-<h4>«Приют 11» </h4>
+<div>&nbsp;</div>
+
+<h3 style="font-style: italic; text-align: center;">Строительство «Приюта 11»</h3>
 <%= article_image_tag "image008.jpg", :class => :illustration, :alt => "«Приют 11»" %>
 <div>«Приют 11» на склоне Эльбруса уникальная высокогорная гостиница для путешественников</div>
 

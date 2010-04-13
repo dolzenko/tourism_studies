@@ -1,7 +1,9 @@
-<%= article_image_tag("image003.jpg") %>
+<% @h1_class = :under_banner %>
+<%= article_image_tag("image003.jpg", :id => :banner, :style => "left: 80px;") %>
+
 <%= article_image_tag("image004.jpg") %>
 
-<div>Анна Юрьевна Александрова –</div>
+<div class="luminary">Анна Юрьевна Александрова –</div>
 
 <div>профессор кафедры рекреационной географии и туризма МГУ,</div>
 

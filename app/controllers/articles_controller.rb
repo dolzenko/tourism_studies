@@ -1,4 +1,4 @@
-class ArticlesController < ApplicationController
+class ArticlesController < ApplicationController  
   # GET /articles
   # GET /articles.xml
   def index
@@ -13,7 +13,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.xml
   def show
-    @article = Article.find(params[:id])
+    @article = Article.find(params[:id] || Article.cover_page_id)
 
     respond_to do |format|
       format.html # show.html.erb

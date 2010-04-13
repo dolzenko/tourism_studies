@@ -25,7 +25,7 @@ end
 
 root = Pathname.new(File.expand_path("../", File.dirname(__FILE__)))
 
-for source in Dir[(root + "db/models/articles/**/slideshow/source/*.*").to_s]
+for source in Dir[(root + "db/models/articles/54-moskva/slideshow/source/*.*").to_s]
   target =  source.sub("slideshow/source", "slideshow/resized")
   FileUtils.mkdir_p(File.dirname(target))
   resize_image(source,target , SLIDESHOW_RMAGICK_GEOMETRY)

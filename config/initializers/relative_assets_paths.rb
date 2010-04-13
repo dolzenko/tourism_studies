@@ -1,7 +1,7 @@
 module RelativeAssetsPaths
   private
   
-  def rewrite_asset_path(source)
+  def rewrite_asset_path(source, path = nil)
     relative_to_request(source)
   end
 

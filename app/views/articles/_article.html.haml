@@ -1,7 +1,8 @@
-.item{:class => article.section? ? :section : :module}
-  = link_to article.title, article, :class => @article == article && :current
-  - if Rails.env.development? && params[:action] == "index"
-    .controls
-      = link_to 'Edit', edit_article_path(article)
-      = link_to 'Destroy', article, :confirm => 'Are you sure?', :method => :delete
-  = render article.children
+- unless article.cover_page?
+  .item{:class => article.section? ? :section : :module}
+    = link_to article.title.html_safe, article, :class => @article == article && :current
+    - if Rails.env.development? && params[:action] == "index"
+      .controls
+        = link_to 'Edit', edit_article_path(article)
+        = link_to 'Destroy', article, :confirm => 'Are you sure?', :method => :delete
+    = render article.children

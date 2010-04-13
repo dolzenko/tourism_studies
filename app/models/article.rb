@@ -47,6 +47,14 @@ class Article < ActiveRecord::Base
   def additional_material?
     parent_id == 52
   end
+
+  def cover_page?
+    id == self.class.cover_page_id
+  end
+
+  def self.cover_page_id
+    59
+  end
   
   def content
     if file = filesystem_attr_file

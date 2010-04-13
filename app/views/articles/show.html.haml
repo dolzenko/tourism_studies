@@ -6,7 +6,10 @@
          (link_to("следующий модуль", @article.next, :class => :next) if @article.next) ].compact.join(image_tag("navdelim.png", :class => :delim)) |
   / = link_to 'оглавление', articles_path
 
-%h1!= @article.title
+- article_content = render(:inline => @article.content.html_safe)
+
+- unless @article.cover_page?
+  %h1{:class => @h1_class}!= @article.title
 
 - if Rails.env.development?
   = link_to 'New article', new_article_path
@@ -15,7 +18,7 @@
   |
   = link_to 'Back', articles_path
 
-.article[]!= render(:inline => @article.content.html_safe)
+.article[]!= article_content  
 
 - if @article.children.present?
   %hr

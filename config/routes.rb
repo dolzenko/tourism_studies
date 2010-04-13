@@ -1,5 +1,10 @@
 TourismStudies::Application.routes.draw do |map|
   resources :articles
+  match "index.:format" => "articles#show"
+  
+  namespace :debug do
+    resource :console, :controller => :console
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -51,7 +56,7 @@ TourismStudies::Application.routes.draw do |map|
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   # root :to => "articles#index"
-  match "index.:format" => "articles#index"
+
 
   # See how all your routes lay out with "rake routes"
 

@@ -1,6 +1,10 @@
-<%= article_image_tag "image017.jpg" %>
+<% @h1_class = :under_big_banner %>
 
-<div>Владимир Сергеевич Преображенский,</div>
+<a href="http://fgp.igras.ru/">
+  <%= article_image_tag("image017.jpg", :id => :banner, :style => "left: 80px;") %>
+</a>
+
+<div class="luminary">Владимир Сергеевич Преображенский,</div>
 
 <div>доктор географических наук., профессор,</div>
 

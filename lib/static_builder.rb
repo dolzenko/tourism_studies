@@ -39,7 +39,10 @@ class StaticBuilder
   def get(path)
     p = "#{ path }.html"
     puts "Caching #{ p }"
-    app.get p
+
+    unless response = app.get(p)
+      raise "Failed to get #{ p }: #{ response.inspect }"
+    end
   end
 
   def copy_public

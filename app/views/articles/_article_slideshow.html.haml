@@ -1,4 +1,4 @@
-%ul#slideshow
-  - Dir[File.join(Rails.root + "public", article_asset_path("slideshow/resized/*.*"))].sort.each do |image| 
+%ul#slideshow 
+  - Dir[File.join(Rails.root + "public", article_asset_path("slideshow/resized/*.*"))].sort { |a, b| a.natcmp(b) }.each do |image| 
     %li
       = image_tag image.sub(/^#{ Regexp.escape (Rails.root + "public").to_s }/, "")

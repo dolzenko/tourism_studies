@@ -1,7 +1,11 @@
-<%= article_image_tag "image009.jpg" %>
+<% @h1_class = :under_banner %>
+<a href="http://www.rmat.ru/">
+  <%= article_image_tag("image009.jpg", :id => :banner, :style => "left: 200px;") %>
+</a>
+
 <%= article_image_tag "image010.jpg" %>
 
-<div>
+<div class="luminary">
   Валерий Александрович Квартальнов –
 </div>
 
