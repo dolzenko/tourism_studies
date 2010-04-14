@@ -40,8 +40,8 @@ class StaticBuilder
     p = "#{ path }.html"
     puts "Caching #{ p }"
 
-    unless response = app.get(p)
-      raise "Failed to get #{ p }: #{ response.inspect }"
+    unless app.get(p) == 200
+      raise "Failed to get #{ p }"
     end
   end
 
